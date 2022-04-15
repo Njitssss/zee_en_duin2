@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="boekingen_container">
+            <h1>Uw boekingen</h1>
+            <p>Hier vind u een overzicht van al uw boekingen.</p>
+            {% if boekingen %}
+            <ul>
+                {% for i in boekingen%}
+                    <div class="info_container">
+                        <p>{{i[0]}}</p>
+                        <a href='{{url_for("annuleer", id=i[1])}}'>Annuleer</a>
+                        <a href='/boekingen/aanpassen?id={{i[1]}}'>Aanpassen</a>
+                    </div>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style="font-size: 24px; padding-top: 20px;">U hebt nog geen boekingen.</p>
+            <div class="info_container" style="height: 80px;">
+                <a style="width: 32%; float: left;" href="/">Home</a>
+                <a href="/bungalows" style="width: 40%; float: right;">Onze bungalows</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="aanpas_form">
+        <h1>Uw boeking aanpassen</h1>
+
+        {% if w_or_g %}
+        <p class="w_or_g">{{w_or_g}}</p>
+        {% else %}
+        <p>Let op: u kunt alleen de dagen aanpassen van uw boeking!</p>
+        <p>U bevind zich nu in boeking {{ boeking_id }}</p>
+        <p>Deze boeking loopt van {{datums}}</p>
+        <br>
+        
+        <p class="w_or_g" style="font-size: 23px;">{{ wrong_date }}</p>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.nieuwe_week.label }} 
+            {{ form.nieuwe_week }} 
+            <p>Weet u zeker dat u deze boeking wilt aanpassen? </p>
+            <p class="w_or_g" style="font-size: 15px;">Let op: Deze actie kan niet ongedaan worden gemaakt!</p>
+            <p> {{ form.confirm}} {{ form.confirm.label }} </p>
+
+            {{ form.submit }} 
+        </form>
+        
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="boek_container">
+            <h1>Succesvol gereserveert voor:</h1>
+            <h1>{{ bungalow }}</h1>
+            <img  style="width: 46%;" class="bungalow_details_img" src="../static/bungalow_{{bungalow_id}}_new.jpg" alt="bungalow_foto">
+            <p>Uw bungalow is geboekt voor: {{datum}}</p>
+        </div>
+        
+    </div>
+{% endblock %}

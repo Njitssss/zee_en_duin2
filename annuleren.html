@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="annuleer_container">
+        <div class="annuleer_data_container">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <p>Wilt u echt uw boeking annuleren? Deze actie kan niet ongedaan worden gemaakt</p>
+                <p>{{ form.confirm.label }} {{form.confirm}} Ja ik wil mijn boeking annuleren</p>
+                <p class="w_or_g">{{ w_or_g }}</p>
+                <p>{{form.submit}}</p>
+            </form>
+        </div>  
+    </div>
+{% endblock %}
